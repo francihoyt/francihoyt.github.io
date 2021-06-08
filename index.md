@@ -1,3 +1,5 @@
-# Goldberry Interiors
+---
+layout: home
+---
 
-[Contact Franci Hoyt](mailto:francihoyt@gmail.com)
+Home page
