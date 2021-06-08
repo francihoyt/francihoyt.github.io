@@ -2,4 +2,4 @@
 layout: home
 ---
 
-Home page
+[Contact Franci](mailto:francihoyt@gmail.com)
