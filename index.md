@@ -2,4 +2,6 @@
 layout: home
 ---
 
-[Contact Franci](mailto:francihoyt@gmail.com)
+*Nice-looking website coming soon!*
+
+Email: [franci@goldberryinteriors.com](mailto:franci@goldberryinteriors.com)
