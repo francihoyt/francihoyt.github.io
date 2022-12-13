@@ -1,0 +1,16 @@
+<p class="post-info">
+ <div class="post-title">
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a> {{ if .Params.comments }} <span class="num-comments">({{ .Params.comments | len }})</span>{{ end }}
+ </div>
+ <div class="post-meta">
+  <span class="post-author">{{ .Params.author }}</span>
+  <span class="post-date">{{ .Date | time.Format "2 Jan 2006" }}</span>
+{{- if .Params.categories }}
+  <span class="post-categories">
+ {{- range .Params.categories }}
+   <a href="/category/{{ . | urlize }}/">{{ . }}</a>
+ {{- end }}
+  </span>
+{{- end }}
+ </div>
+</p>

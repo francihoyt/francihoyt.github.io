@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="next-prev-top">
+{{- if .PrevPage }}
+ <a href="{{ .PrevPage.RelPermalink }}" rel="prev" title="Older post"><div class="prev-top">→</div></a>
+{{- end }}
+{{- if .NextPage }}
+ <a href="{{ .NextPage.RelPermalink }}" rel="next" title="Newer post"><div class="next-top">←</div></a>
+{{- end }}
+</div>
+<h1>{{ .Title }}</h1>
+<div class="subtitle">
+ <span class="post-author">{{ .Params.author }}</span>
+ <span class="post-date">{{ .Date | time.Format "2 Jan 2006" }}</span>
+{{- if .Params.categories }}
+ <span class="post-categories">
+ {{- range .Params.categories }}
+  <a href="/category/{{ . | urlize }}/">{{ . }}</a>
+ {{- end }}
+ </span>
+{{- end }}
+</div>
+<article>
+{{ .Content }}
+</article>
+{{ partial "comments.html" . }}
+<nav><div class="next-prev">
+{{- if .PrevPage }}
+<span class="prev"><a href="{{ .PrevPage.RelPermalink }}" rel="prev">{{ .PrevPage.Title }} →</a></span>
+{{- end }}
+{{- if .NextPage }}
+<span class="next"><a href="{{ .NextPage.RelPermalink }}" rel="next">← {{ .NextPage.Title }}</a></span>
+{{- else }}
+<span class="next">&nbsp;</span>
+{{- end }}
+</div></nav>
+{{ end }}

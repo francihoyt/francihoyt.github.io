@@ -1,0 +1,20 @@
+{{ if .Params.comments -}}
+<div id="comments">
+ <h2>Comments ({{ .Params.comments | len }})</h2>
+{{- range .Params.comments }}
+ <div class="comment">
+   <div class="comment-header">
+    <span class="comment-author">
+ {{- if .url -}}
+    <a href="{{ .url }}">{{ .author }}</a>
+ {{- else -}}
+    {{ .author }}
+ {{- end -}}
+    </span>
+    <span class="comment-date">{{ .date | time.Format "2 Jan 2006" }} at {{ .date | time.Format "3:04pm" }}</span>
+   </div>
+{{ .content | safeHTML }}
+ </div>
+{{- end }}
+</div>
+{{ end -}}

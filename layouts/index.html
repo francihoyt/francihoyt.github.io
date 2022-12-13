@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>Welcome to our old family blog</h1>
+<div class="subtitle">Ben &amp; Franci and co (sort of) in New York City</div>
+<img src="/images/2015/04/cropped-dsc01743.jpg" width="676" height="225" alt="New York City skyline">
+
+<p>This was our place to post updates about our time in The Big Apple &ndash; we lived in or near New York from 2010 to 2020, with a gap in 2013. It was our attempt to keep in touch with loved ones far away, and it worked really well for that.</p>
+<p>We’ve now returned to New Zealand, but we’re keeping this here for the photos and as a historical reference for us.</p>
+
+{{- $year := "" }}
+{{- range .Site.RegularPages }}
+ {{- $pageYear := .Date | time.Format "2006" }}
+ {{- if ne $year $pageYear }}
+<h2>{{ $pageYear }}</h2>
+  {{- $year = $pageYear }}
+ {{- end }}
+{{- partial "post-info.html" . }}
+{{- end }}
+{{ end }}

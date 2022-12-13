@@ -1,0 +1,10 @@
+baseURL = 'https://aliensintheapple.com/'
+languageCode = 'en'
+title = 'Aliens in the Apple'
+summaryLength = 35
+
+[taxonomies]
+  category = 'categories'
+
+[permalinks]
+  categories = '/category/:slug/'
